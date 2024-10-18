@@ -1,0 +1,31 @@
+Configuration:
+  name: Default
+
+  Properties:
+    Property:
+      - name: log-path
+        value: "logs"
+
+  Appenders:
+    Console:
+      - name: Console_Appender
+        target: SYSTEM_OUT
+        PatternLayout:
+          pattern: "%d{yyyy-MM-dd HH:mm:ss.SSS} - [%level] [%t] %c{1} - %msg%n"
+    File:
+      - name: File_Appender
+        fileName: D:\Project\WarehouseLogs\Logs.log
+        PatternLayout:
+        pattern: "%d{yyyy-MM-dd HH:mm:ss.SSS} - [%level] [%t] %c{1} - %msg%n"
+  Loggers:
+    Root:
+      level: debug
+      AppenderRef:
+       - ref: Console_Appender
+    Logger:
+      - name: com.warehouse
+        level: debug
+        AppenderRef:
+          - ref: File_Appender
+            level: error
+          - ref: Console_Appender
