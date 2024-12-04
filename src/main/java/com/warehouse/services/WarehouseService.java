@@ -1,7 +1,6 @@
 package com.warehouse.services;
 
-import com.warehouse.common.dto.CreateOrderRequest;
-import com.warehouse.repositories.OrderDetailsRepository;
+import com.warehouse.common.dto.request.CreateOrderRequest;
 
 public interface WarehouseService {
 

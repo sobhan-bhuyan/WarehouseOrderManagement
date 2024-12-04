@@ -31,5 +31,4 @@ public interface OrderDetailsRepository {
     })
     @Transactional()
     void insertItemDetails(@Param("entities") List<ItemDetailsEntity> itemList);
-
 }

@@ -1,12 +1,10 @@
 package com.warehouse.services.impls;
 
-import com.warehouse.common.dto.CreateOrderRequest;
-import com.warehouse.common.dto.response.Response;
+import com.warehouse.common.dto.request.CreateOrderRequest;
 import com.warehouse.exceptions.DatabaseException;
 import com.warehouse.repositories.entities.ItemDetailsEntity;
 import com.warehouse.repositories.entities.OrderDetailsEntity;
 import com.warehouse.services.WarehouseService;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +46,9 @@ public class WarehouseServiceImpl implements WarehouseService {
 
         try {
             orderDetailsRepository.insertOrderDetails(orderDetailsEntity);
+            log.info("Inserted order details for orderId : {}", orderId);
             orderDetailsRepository.insertItemDetails(itemDetails);
+            log.info("Inserted item details for orderId : {}", orderId);
         }
         catch(Exception e) {
             log.error("Exception occurred while inserting order details e : {}", ExceptionUtils.getStackTrace(e));

@@ -2,22 +2,16 @@ package com.warehouse.controllers;
 
 
 
-import com.warehouse.common.dto.CreateOrderRequest;
-import com.warehouse.common.dto.GetOrderRequest;
+import com.warehouse.common.dto.request.CreateOrderRequest;
+import com.warehouse.common.dto.request.GetOrderRequest;
 import com.warehouse.services.WarehouseService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
-import java.awt.*;
-import java.util.Arrays;
-import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/v1")

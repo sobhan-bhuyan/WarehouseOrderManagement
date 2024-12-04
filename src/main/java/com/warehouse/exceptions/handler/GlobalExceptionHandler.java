@@ -1,18 +1,14 @@
 package com.warehouse.exceptions.handler;
 
-import ch.qos.logback.core.spi.ErrorCodes;
 import com.warehouse.common.dto.response.Response;
 import com.warehouse.common.dto.response.ResultInfo;
-import com.warehouse.common.dto.utilities.ResponseBuilder;
+import com.warehouse.common.utilities.ResponseBuilder;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.stream.Collectors;
 
