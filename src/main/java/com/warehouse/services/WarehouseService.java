@@ -1,9 +1,11 @@
 package com.warehouse.services;
 
-import com.warehouse.common.dto.request.CreateOrderRequest;
+import com.warehouse.common.models.request.CreateOrderRequest;
+import com.warehouse.common.models.response.GetOrderResponse;
 
 public interface WarehouseService {
 
-    void createOrder(CreateOrderRequest createOrderRequest);
+    String createOrder(CreateOrderRequest createOrderRequest);
 
+    GetOrderResponse getOrder(Long getOrderRequest);
 }

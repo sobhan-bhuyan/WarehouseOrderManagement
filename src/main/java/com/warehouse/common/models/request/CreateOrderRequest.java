@@ -1,16 +1,19 @@
-package com.warehouse.common.dto.request;
+package com.warehouse.common.models.request;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-
+@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-    public class CreateOrderRequest {
+public class CreateOrderRequest {
 
     @NotBlank(message = "Username cannot be blank")
     private String username;
@@ -23,10 +26,12 @@ import java.util.List;
     @Size(max = 10, message = "Maximum 10 items can be ordered")
     @Valid
     private List<ItemDetails> itemDetails;
+
+    @Builder
     @Data
-    public static class ItemDetails{
-        @NotBlank(message = "Product/Item name cannot be blank")
-        private String itemName;
+    public static class ItemDetails {
+        @NotBlank(message = "Item id name cannot be blank")
+        private String itemId;
 
         @Min(value = 1, message = "Quantity cannot be blank")
         private int quantity;

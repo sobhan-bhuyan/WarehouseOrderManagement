@@ -12,9 +12,12 @@ import lombok.experimental.SuperBuilder;
 public class ItemDetailsEntity {
 
     private int id;
-    private long orderId;
-    private String itemName;
+    private String itemId;
     private int itemQuantity;
+    private long orderId;
+    private String itemRow;
+    private int itemColumn;
+    private String itemHeight;
 
 }
 

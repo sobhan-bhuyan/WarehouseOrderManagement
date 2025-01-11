@@ -1,12 +1,12 @@
 package com.warehouse.repositories.entities;
 
-import com.mysql.cj.x.protobuf.MysqlxCrud;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,6 +18,8 @@ public class OrderDetailsEntity {
 
     private String orderPlacedBy;
 
-    private int warehousePincode;
+    private String warehousePincode;
+
+    private List<ItemDetailsEntity> itemDetails;
 
 }
